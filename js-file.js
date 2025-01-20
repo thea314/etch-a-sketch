@@ -39,10 +39,54 @@ function drawGrid(totalSquares) {
         content.style.margin = '0px 0px 0px 0px';
         content.style.padding = '0px';
 
+
+        let counter = 0;
+        
         content.addEventListener('mouseover', () => {
-            content.style.backgroundColor = 'black';
+            
+            if (content.style.backgroundColor === 'white') {
+                content.style.backgroundColor = '#' + makeRandomColor();
+                content.style.opacity = '0.1';
+                counter++;
+            } else if (counter == 1) {
+                content.style.opacity = '0.1';
+                counter++;
+            }else if (counter == 2) {
+                content.style.opacity = '0.2';
+                counter++;
+            }else if (counter == 3) {
+                content.style.opacity = '0.3';
+                counter++;
+            }else if (counter == 4) {
+                content.style.opacity = '0.4';
+                counter++;
+            }else if (counter == 5) {
+                content.style.opacity = '0.5';
+                counter++;
+            }else if (counter == 6) {
+                content.style.opacity = '0.6';
+                counter++;
+            }else if (counter == 7) {
+                content.style.opacity = '0.7';
+                counter++;
+            }else if (counter == 8) {
+                content.style.opacity = '0.8';
+                counter++;
+            }else if (counter == 9) {
+                content.style.opacity = '0.9';
+                counter++;
+            }else if (counter == 10) {
+                content.style.opacity = '1';
+            } 
+
+                
         })
             
         }
 
+    }
+
+    function makeRandomColor() {
+        let randomColor = Math.floor(Math.random()*16777215).toString(16);
+        return randomColor;
     }
